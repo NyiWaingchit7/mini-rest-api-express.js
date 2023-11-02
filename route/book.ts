@@ -9,7 +9,7 @@ BookRouter.get("/", async (req: Request, res: Response) => {
         id: true,
         title: true,
         is_fiction: true,
-        date_public: true,
+        date_published: true,
         author: {
           select: {
             id: true,
@@ -48,14 +48,14 @@ BookRouter.post("/", async (req: Request, res: Response) => {
       data: {
         title,
         is_fiction: isFiction,
-        date_public: parsedDate,
+        date_published: parsedDate,
         authorId: authorId,
       },
       select: {
         id: true,
         title: true,
         is_fiction: true,
-        date_public: true,
+        date_published: true,
         author: {
           select: {
             id: true,
@@ -85,7 +85,7 @@ BookRouter.post("/:id", async (req: Request, res: Response) => {
       data: {
         title,
         is_fiction: isFiction,
-        date_public: parsedDate,
+        date_published: parsedDate,
         authorId: authorId,
       },
       where: { id },
@@ -93,7 +93,7 @@ BookRouter.post("/:id", async (req: Request, res: Response) => {
         id: true,
         title: true,
         is_fiction: true,
-        date_public: true,
+        date_published: true,
         author: {
           select: {
             id: true,

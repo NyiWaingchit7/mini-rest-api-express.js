@@ -25,7 +25,7 @@ model Book {
   updated_at  DateTime @updatedAt
   title       String
   is_fiction  Boolean
-  date_public DateTime
+  date_published DateTime
   author      Author   @relation(fields: [authorId], references: [id] , onDelete: Cascade)
   authorId    Int
 }
